@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="container-main">
+  <block wx:for="{{list}}" wx:key="list">
+  <navigator url="/pages/details/details?id={{index}}">
+    <view class="container-main-product">
+      <view class="main-product-image">
+        <image src="{{item.image}}"></image>
+      </view>
+      <view class="main-product-text1">
+        <text class="xprice">¥{{item.xprice}}</text>
+        <text class="yprice">¥{{item.yprice}}</text>
+        <text class="yprice">{{item.discount}}</text>
+      </view>
+      <view class="main-product-text2">
+        <text>{{item.desc}}</text>
+      </view>
+    </view>
+  </navigator>
+  </block>
+  </view>
+</view>

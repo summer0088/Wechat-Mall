@@ -1,0 +1,48 @@
+<view class="container">
+    <view class="search">
+      <view class="search-input">
+        <view class="search-input-image">
+          <image src="{{search[0]}}"></image>
+        </view>
+        <view class="search-input-input">
+          <input type="text" placeholder="防晒"></input>
+        </view>
+      </view>
+      <view class="cate">
+        <view class="cate-image">
+          <image src="{{search[1]}}"></image>
+        </view>
+       <!-- <view class="cate-text">分类</view> -->
+      </view>
+    </view>
+    <view class="nav">
+        <block wx:for="{{navlist}}" wx:key="id">
+          <navigator url="/pages/productlist/productlist">
+          <view class="nav-list {{index == selectCurrent ? 'active' : ''}}" bindtap="navchange" id="{{index}}">
+            {{item}}
+          </view>
+          </navigator>
+        </block>
+    </view>
+    <view class="main-product">
+      <block wx:for="{{productlist}}" wx:key="productlist">
+      <navigator url="/pages/product/product?id={{index}}">
+      <view class="main-product-list">
+          <view class="product-list-image">
+            <image src="{{item.image}}"></image>
+          </view>
+          <view class="product-list-text">
+            <view class="product-list-top">
+              <view>{{item.adv}}</view>
+              <view class="twoday">剩{{item.day}}天</view>
+            </view>
+            <view class="product-list-bottom">
+              <view class="product-bottom-image"><image src="http://www.wannengpa.com/images/hua.png"></image></view>
+              <view class="product-bottom-text"><text>{{item.activity}}</text></view>
+            </view>
+          </view>
+        </view>
+      </navigator>   
+      </block>
+    </view>
+</view>

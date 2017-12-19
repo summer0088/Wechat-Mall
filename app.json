@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/productlist/productlist",
+    "pages/cate/cate",
+    "pages/admin/admin",
+    "pages/cart/cart",
+    "pages/product/product",
+    "pages/details/details"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#E6007F",
+    "navigationBarTitleText": "叮当商城",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+    "color":"#666",
+    "selectedColor":"#E6007F",
+    "backgroundColor":"white",
+    "borderStyle":"white",
+    "list":[{
+      "pagePath":"pages/index/index",
+      "text": "首页",
+      "iconPath":"images/home.png",     "selectedIconPath":"images/home_on.png"
+    },{
+      "pagePath": "pages/cart/cart",
+      "text": "购物车",
+      "iconPath": "images/cart.png",
+      "selectedIconPath": "images/cart_on.png"
+    },
+    {
+      "pagePath": "pages/admin/admin",
+      "text": "我的",
+      "iconPath": "images/admin.png",
+      "selectedIconPath": "images/admin_on.png"
+    }]
+  },
+  "networkTimeout":{
+    "request":30000,
+    "connectSocket":3000,
+    "uploadFile":3000,
+    "downloadFile":3000
+  },
+  "debug":true
+}

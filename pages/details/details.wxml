@@ -1,0 +1,130 @@
+<view class="container">
+    <view class="container-show">
+        <swiper indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="slider">
+          <block wx:for="{{imgUrls}}" wx:key="imgUrls">
+            <swiper-item >
+              <image src="{{item}}" class="slide-image" />
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="product-desc">
+          <view class="main-product-text1">
+            <text class="xprice">¥1209</text>
+            <text class="yprice">¥2690</text>
+            <text class="yprice">4.5折</text>
+          </view>
+          <view class="main-product-text2">
+            <text>杨幂同款加厚可爱睡衣</text>
+          </view>
+        </view>
+        <view class="small-icon">
+            <view class="icon-img" id="{{item.id}}" bindtap="imagechange" wx:for="{{iconimg}}" wx:key="iconimg">
+              <image src="{{item.image}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="size">
+      <view class="size-title">尺寸</view>
+      <view class="size-size">
+        <block wx:for="{{size}}" wx:key="size">
+          <view id="{{index}}" bindtap="sizechange" class="{{index == selectCurrent ? 'active' : ''}}">{{item}}</view>
+        </block> 
+      </view>
+      
+    </view>
+    <view class="product-can">
+      <view class="product-title">
+        产品参数
+      </view>
+      <view class="canshu">
+        <view class="text1"><text >产地</text></view>
+        <view class="text2"><text >广东深圳</text></view>
+      </view>
+      <view class="canshu">
+        <view class="text1"><text >风格</text></view>
+        <view class="text2"><text >英伦</text></view>
+      </view>
+      <view class="canshu">
+        <view class="text1"><text >版型</text></view>
+        <view class="text2"><text >宽松</text></view>
+      </view>
+      <view class="canshu">
+        <view class="text1"><text >厚薄</text></view>
+        <view class="text2"><text >常规</text></view>
+      </view>
+      <view class="canshu">
+        <view class="text1"><text >弹性</text></view>
+        <view class="text2"><text >无弹</text></view>
+      </view>
+      <view class="canshu">
+        <view class="text1"><text >适应季节</text></view>
+        <view class="text2"><text >秋冬</text></view>
+      </view>
+      <view class="canshu">
+        <view class="text1"><text >袖型</text></view>
+        <view class="text2"><text >常规</text></view>
+      </view>
+      <view class="canshu">
+        <view class="text1"><text >袖长</text></view>
+        <view class="text2"><text >长袖</text></view>
+      </view>
+      <view class="canshu">
+        <view class="text1"><text >适应人群</text></view>
+        <view class="text2"><text >中青年</text></view>
+      </view>
+    </view>
+    <view class="product-image">
+      <view class="product-title">
+        图文详情
+      </view>
+      <view class="imager">
+        <image src="../../images/lan1.jpeg"></image>
+      </view>
+      <view class="imager">
+        <image src="../../images/lan2.jpeg"></image>
+      </view>
+      <view class="imager">
+        <image src="../../images/lan3.jpeg"></image>
+      </view>
+      <view class="imager">
+        <image src="../../images/lan4.jpeg"></image>
+      </view>
+      <view class="imager">
+        <image src="../../images/lan5.jpeg"></image>
+      </view>
+      <view class="imager">
+        <image src="../../images/lan6.jpeg"></image>
+      </view>
+      <view class="imager">
+        <image src="../../images/fen1.jpeg"></image>
+      </view>
+      <view class="imager">
+        <image src="../../images/fen2.jpeg"></image>
+      </view>
+      <view class="imager">
+        <image src="../../images/fen3.jpeg"></image>
+      </view>
+      <view class="imager">
+        <image src="../../images/fen4.jpeg"></image>
+      </view>
+      <view class="imager">
+        <image src="../../images/fen5.jpeg"></image>
+      </view>
+    </view>
+
+</view>
+
+<view class="cart-cart">
+  <navigator url="/pages/cart/cart">   
+    <view class="null-cart">
+      <image src="../../images/null-cart.png"></image>
+      <view class="carnum" wx:if="{{cartnum != 0}}">
+        {{cartnum}}
+      </view>
+    </view>
+  </navigator>
+    <view class="add-cart" bindtap="numchange">
+      加入购物车
+    </view>
+</view> 

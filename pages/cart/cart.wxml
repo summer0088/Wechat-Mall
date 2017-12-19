@@ -1,0 +1,14 @@
+<view class="container">
+  <view class="cart-null" wx:if="{{cartnum == 0}}">
+    <view class="cart-image">
+        <image src="{{cartImg}}" class="cart-image"/>
+    </view>
+    <view class="cart-text">{{tipWords}}</view>
+  </view>
+
+  <view class="cart-man" wx:if="{{cartnum != 0}}">
+    <view class="cart-man-title">
+    
+    </view>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+<view class="main">
+    <view class="categroy-left">
+        <view wx:for="{{category}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}"
+            bindtap="switchTab"
+            class="cate-list {{curIndex === index?'on':''}}">{{item.name}}</view>
+    </view>
+    <view class="categroy-right">
+      <view class="categroy-right-cate">
+        <view class="category-title">
+          <text>人气美衣</text>
+        </view>
+        <view class="category-images">
+        <block wx:for="{{lists}}" wx:key="lists"> 
+          <view class="category-images-cate">
+            <view class="category-images-cate-image">
+              <image src="{{item.image}}"></image>
+            </view>
+            <view class="category-images-cate-text">
+              <text>{{item.catename}}</text>
+            </view>
+          </view>
+        </block>
+        </view>
+      </view>
+      <view class="categroy-right-cate">
+        <view class="category-title">
+          <text>百搭衣橱</text>
+        </view>
+        <view class="category-images">
+        <block wx:for="{{lists}}" wx:key="lists"> 
+          <view class="category-images-cate">
+            <view class="category-images-cate-image">
+              <image src="{{item.image}}"></image>
+            </view>
+            <view class="category-images-cate-text">
+              <text>{{item.catename}}</text>
+            </view>
+          </view>
+        </block>
+        </view>
+      </view>
+    </view>
+</view>

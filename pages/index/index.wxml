@@ -1,0 +1,130 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="search">
+      <view class="search-input">
+        <view class="search-input-image">
+          <image src="{{search[0]}}"></image>
+        </view>
+        <view class="search-input-input">
+          <input type="text" placeholder="防晒"></input>
+        </view>
+      </view>
+      <view class="cate">
+      <navigator url="/pages/cate/cate">
+        <view class="cate-image">
+          <image src="{{search[1]}}"></image>
+        </view>
+      </navigator>
+      </view>
+    </view>
+    <view class="nav">
+        <block wx:for="{{navlist}}" wx:key="id">
+          <navigator url="/pages/productlist/productlist">
+          <view class="nav-list {{index == selectCurrent ? 'active' : ''}}" bindtap="navchange" id="{{index}}">
+            {{item}}
+          </view>
+          </navigator>
+        </block>
+    </view>
+    <view class="swiper-container">
+        <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+            <block wx:for="{{banners}}" wx:key="id">
+                <swiper-item>
+                  <image src="{{item}}" class="slide-image"/>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="dots">
+            <block wx:for="{{banners}}" wx:key="unique">
+                <view class="dot{{index == swiperCurrent ? 'active' :''}}"></view>
+            </block>
+        </view>
+    </view>
+    <view class="main">
+      <view class="main-top">
+        <view class="main-top-top">
+          <view><text class="texter">好货抱团</text></view>
+          <view class="more">全场包邮 查看更多 ></view>
+        </view>
+        <view class="main-top-middle"> 
+         <scroll-view scroll-x="true" style="white-space:nowrap;display:flex;flex-direction:row;justify-content:space-around;"> 
+          <block wx:for="{{datalist}}" wx:key="datalist">
+            <view class="main-top-product" id="item{{index}}">
+              <view class="main-product-top">
+                <image src="{{item.bigImg}}"></image>
+                <view class="main-top-product-bottom">
+                  <image src="{{item.smallImg}}"></image>
+                </view>
+              </view>
+              <view class="main-product-bottom">
+                <view class="twoprice">
+                  <text class="two">2人团</text>
+                  <text class="price">¥{{item.price}}</text>
+                </view>
+                <view class="del">
+                  <del>单价买¥{{item.yprice}}</del>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class="main-top-product" id="item7">
+            <view class="main-more-top">
+              <view class="viewmore">
+                <text>查看更多</text>
+              </view>
+              <view class="seemore">
+                <text>See more</text>
+              </view>
+            </view>
+          </view>
+         </scroll-view> 
+         </view> 
+      </view>
+      <view class="main-middle">
+        <view class="main-middle-left">
+          <view class="main-middle-left-text">
+            <view class="text-hot"><text>热销排行榜</text></view>
+            <view class="text-bao"><text>各类爆款实时盘点</text></view>
+          </view>
+          <view class="main-middle-left-image">
+            <image src="http://www.wannengpa.com/images/naifen.png"></image>
+          </view>
+        </view>
+        <view class="main-middle-right">
+          <view class="main-middle-left-text">
+            <view class="text-hot"><text>领卷中心</text></view>
+            <view class="text-bao"><text>品牌好券派不停</text></view>
+          </view>
+          <view class="main-middle-left-image">
+            <view class="langsha"><image src="http://www.wannengpa.com/images/langsha.jpeg"></image></view>
+            <view class="quan"><image src="http://www.wannengpa.com/images/quan1.png"></image></view>
+          </view>
+        </view>
+      </view>
+      <view class="main-adv">
+        <text>每天早10点 .晚八点更新</text>
+      </view>
+      <view class="main-product">
+      <block wx:for="{{productlist}}" wx:key="productlist">
+         <navigator url="/pages/product/product?id={{item.id}}"> 
+        <view class="main-product-list">
+            <view class="product-list-image">
+              <image src="{{item.image}}"></image>
+            </view>
+            <view class="product-list-text">
+              <view class="product-list-top">
+                <view>{{item.adv}}</view>
+                <view class="twoday">剩{{item.day}}天</view>
+              </view>
+              <view class="product-list-bottom">
+                <view class="product-bottom-image"><image src="http://www.wannengpa.com/images/hua.png"></image></view>
+                <view class="product-bottom-text"><text>{{item.activity}}</text></view>
+              </view>
+            </view>
+          </view>
+         </navigator> 
+      </block>
+      </view> 
+    </view>
+</view>
+
